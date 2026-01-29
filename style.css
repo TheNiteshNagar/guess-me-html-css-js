@@ -67,7 +67,7 @@ main > .game {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 0.5em;
 }
 
 .winning-effect.enable {

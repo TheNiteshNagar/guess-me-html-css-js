@@ -32,6 +32,7 @@ function game() {
   // check is value is between 1 to 100
   if (guess < 1 || guess > 100) {
     hint.textContent = 'Enter value between 1 to 100 😤'
+    inputBox.value = ''
     return
   }
 
@@ -79,6 +80,7 @@ function game() {
       winningEffect.classList.remove('enable')
       movesCount = 0
       moves.textContent = ''
+      hint.style = 'color: orange'
       hint.textContent = 'New Game Starting...'
       userGuess.textContent = ''
     }, 5000);
@@ -93,18 +95,14 @@ function game() {
   
   else if (guess < randomNumber) {
     hint.style = 'color: red;'
-    hint.textContent = 'Value bahut kam hai'
+    hint.textContent = '📉 Too Low'
   } 
   
   else if (guess > randomNumber) {
     hint.style = 'color: green;'
-    hint.textContent = 'Value bahut high hai'
+    hint.textContent = '📈 Too High'
   } 
   
-  else {
-    hint.textContent = 'Kuch gadbad ho gayi syd 🤕'
-  }
-
   // after checking guess set move count and show the guess
   movesCount = movesCount + 1
   moves.textContent = `Moves: ${movesCount}`
